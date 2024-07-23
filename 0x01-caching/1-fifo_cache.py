@@ -22,11 +22,15 @@ class FIFOCache(BaseCaching):
             item (any): the value of Key
         """
         if key != None and item != None:
+            self.cache_data[key] = item
+            dict_list = []
+            for (key, value) in self.cache_data.items():
+                dict_list.append({'key': key, 'value': value})
             if len(self.cache_data.items()) > self.MAX_ITEMS:
-                print(f'DISCARD: {self.cache_data.keys()[-1]}')
-                print('\n')
-                self.cache_data.pop(self.cache_data.keys()[-1])
-                self.cache_data[key] = item
+                self.cache_data.pop(dict_list[-1]['key'])
+                print(f'DISCARD: {dict_list[-1]['key']}')
+                dict_list.pop()
+                print()
 
     def get(self, key):
         """Get an item from cache by Key
