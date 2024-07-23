@@ -27,8 +27,8 @@ class FIFOCache(BaseCaching):
             for (key, value) in self.cache_data.items():
                 dict_list.append({'key': key, 'value': value})
             if len(self.cache_data.items()) > self.MAX_ITEMS:
-                self.cache_data.pop(dict_list[-1]['key'])
-                print(f'DISCARD: {dict_list[-1]['key']}')
+                self.cache_data.pop(dict_list[0]['key'])
+                print(f'DISCARD: {dict_list[0]['key']}')
                 dict_list.pop()
                 print()
 
