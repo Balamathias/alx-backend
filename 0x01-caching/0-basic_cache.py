@@ -1,13 +1,17 @@
 #!/usr/bin/python3
-"""
-Basic caching algorithmic implementation in PYTHON.
+"""Basic Caching Implementation
+
+Returns:
+    Any: any
 """
 from base_caching import BaseCaching
 
 
 class BasicCache(BaseCaching):
-    """
-    Class Implementation of Basic Caching in PYTHON.
+    """...
+
+    Args:
+        BaseCaching (any): ...
     """
 
     def __init__(self):
@@ -20,6 +24,7 @@ class BasicCache(BaseCaching):
             key (any): The key to insert
             item (any): the value of Key
         """
+
         if key != None and item != None:
             self.cache_data[key] = item
 
@@ -32,4 +37,6 @@ class BasicCache(BaseCaching):
         Returns:
             any: The result or None for the given value of key
         """
-        return None if key == None or self.cache_data.get(key) == None else self.cache_data.get(key)
+
+        return None if key == None or self.cache_data.get(key) == None \
+            else self.cache_data.get(key)
