@@ -2,6 +2,7 @@
 '''
 Basic caching algorithmic implementation in PYTHON.
 '''
+
 from base_caching import BaseCaching
 
 
@@ -18,5 +19,4 @@ class BasicCache(BaseCaching):
 
     def get(self, key):
         '''Get an item from cache dict by key'''
-        return None if key == None or self.cache_data.get(key) == None \
-            else self.cache_data.get(key)
+        return None if key == None or self.cache_data.get(key) == None else self.cache_data.get(key)
